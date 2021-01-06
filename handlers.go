@@ -81,7 +81,7 @@ func (m *Mux) HandleService(pathPrefix string, svc interface{}) {
 			strings.NewReplacer(
 				"{{ .Title }}", "文档",
 				"{{ .Links }}", strings.Join(links, "\n\t\t"),
-			).Replace(string(DocIndexGohtml.Bytes())),
+			).Replace(docIndexHtml),
 		)
 		m.Handle(http.MethodGet, indexPath, func(c *Context) (interface{}, error) {
 			return s, nil

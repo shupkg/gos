@@ -2,6 +2,7 @@ package gos
 
 import (
 	"bytes"
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"reflect"
@@ -12,6 +13,15 @@ import (
 	"github.com/russross/blackfriday/v2"
 	"golang.org/x/text/encoding/simplifiedchinese"
 )
+
+//go:embed embed/doc.html
+var docHtml string
+
+//go:embed embed/doc_index.gohtml
+var docIndexHtml string
+
+//go:embed embed/doc.gomd
+var docMd string
 
 var mdTpl *template.Template
 
@@ -28,7 +38,7 @@ func init() {
 					return strings.ReplaceAll(s, "&", "\n&")
 				},
 			},
-		).Parse(string(DocGomd.Bytes())),
+		).Parse(docMd),
 	)
 }
 
@@ -86,7 +96,7 @@ func (ad *Doc) Markdown(path string) (md []byte, html string) {
 	html = strings.NewReplacer(
 		"{{ .Title }}", ad.Name,
 		"{{ .Body }}", string(blackfriday.Run(md)),
-	).Replace(string(DocHtml.Bytes()))
+	).Replace(docHtml)
 
 	return
 }
