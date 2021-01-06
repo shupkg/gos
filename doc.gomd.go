@@ -1,0 +1,26 @@
+package gos
+
+import (
+	"github.com/shupkg/gos/embed"
+)
+
+var DocGomd = &embed.File{
+	FileName:    "doc.gomd",
+	FileModTime: 1608536003,
+	FileSize:    1307,
+	Data: `
+H4sIAAAAAAAC/2yU307jRhTG7+cpjkwuIIrjq95YaiVUQLQSJAq5b9xkCG5jO7UnCq1tiaQgVZA0iJIW
+WokS7WoXaaU1aFf8383LZMbhal9hNZ4QTDa+mTNnfvPpzDlf4royKMmyRX6tYhU047eibSg/asWfsVlS
+akSvOErZctILVjGpgOz7CM3MgOtCelUzMPg+4gJ1nWxAegE7RVuvEt0y+QH6JuIeGWyWQFyfgWFwxS6a
+4ZsgbN4gVOBYViMb4PuFOMD+vmHvulyIHQas1ViybGPYO6PtLj1ofb+WWWVnPXrfQahQKBC8SdAKJhtW
+SUUA2cxaHqFlrJWwzfffWibBJpHz/JkIAICLqTwASatWK3pR44Urm3K9XpfXLduQa3YFm0WrhEvS+MaS
+XsEqSEatQvSqZhMlIksa0QTDq5qi+pNjmRIvE8X69Z1ZrZGsZmuGM9EZ2mmy7jlCHoiI7rfD1+fgQXhx
+R0/2wAPa33no3YEHrNMZ9qOjl7eDj3t06x485IEqy7IMo1UsKkykwYuKsTWzjMWcvPhkQex4x8Y7fR3S
+OfxLTbcxnyY7Clx3NNkR/twEo+TipmZUK0Imboa4Lyb6EuWSSfGqWd7luWQymjTvJYqc5QHPczLq7Jjm
+xDSax2P6C0/2D+l/J6x7ztpvZ9kf+3T3/7nnCpka4YVN0RF1L9q2ZTvTBR8Oj4dB8CT4FXIRgMTdJalS
+dj43v/LDYi6XyUkpUBRBD+5ehKcNjhlOWVIl4QVxJqVAfIpCO83h1u/CBxyOzKiCC/FPUR6Ot+nu6aDf
+Y43g032LvmoOrvcG17dxVfbPpaia7lwNPvwlkuG/24IRdyObSxNHdL89UeAweM+O/pRSCMBPofGElvP5
+bLh7ybYa4WmDHrTiLx1NLPolPxkz4RCN1JwUJAxQv378P3lMg++rcdhMQcLhXCLyBa+Vw3xcahQ5E76L
+hZO2+BwAAP//RcmzlRsFAAA=
+`,
+}

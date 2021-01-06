@@ -1,0 +1,86 @@
+{{- /*gotype: amzcrm/backend/utils/gos.Doc*/ -}}
+
+## {{ .Name }}
+{{- with .Description }}
+
+> {{ . }}
+{{- end }}
+
+### 请求端点
+
+`{{ .Path }}`
+
+### 请求方法
+
+> 支持Form表单和JSON模式
+
+```text
+Method:
+  POST
+
+Header:
+  Content-Type:
+    Form:     "application/x-www-form-urlencoded"
+    FormFile: "multipart/form-data"
+    JSON:     "application/json"
+```
+
+{{- with .InputParams }}
+
+### 请求参数
+
+| 参数名称 | 类型 | 必须 | 描述 | 示例值 |
+| :---- | :----| :---: | :---- | :---- |
+{{- range . }}
+| {{ .Name }} | {{ .Type }} | {{ if .Required }}是{{ end }} | {{ .Description }} | {{ .Example }} |
+{{- end }}
+{{- end }}
+
+{{- with .Input }}
+
+**示例(form)**
+
+```json
+{{ . | form }}
+```
+
+**示例(json)**
+
+```json
+{{ . | json }}
+```
+
+{{- end }}
+
+### 返回数据(成功)
+
+```json
+{{ .Output | json }}
+```
+
+{{- with .Errors }}
+
+### 返回数据(错误)
+
+```json5
+{
+  "code":"PARAM_ERROR", //错误代码
+  "msg":"参数错误",       //参考描述
+  "data": {             //附加信息，如下为参数错误时返回具体错误的参数信息
+    "错误的参数名":"参数错误说明",
+  },
+}
+```
+
+**HTTP状态码和错误代码**
+
+```text
+{{- range $status, $m := . }}
+{{ $status }}:
+{{- range $n, $s := $m }}
+    {{ $n }}: {{ $s }}
+{{- end }}
+{{- end }}
+```
+
+{{- end }}

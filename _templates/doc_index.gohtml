@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+
+        .markdown-body pre code {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .markdown-body blockquote p {
+            font-size: 12px;
+        }
+
+        .markdown-body table td,
+        .markdown-body table th {
+            word-break: keep-all;
+            white-space: nowrap;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .markdown-body table thead tr {
+            font-size: 12px;
+            background-color: #e5e9ec;
+        }
+
+        .markdown-body dl > dt {
+            font-style: normal;
+            font-size: 14px;
+        }
+
+        .markdown-body dl > dd > a {
+            color: #999999;
+            text-decoration: none;
+        }
+
+        .markdown-body dl > dd > a:hover {
+            color: #666666;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<main class="markdown-body">
+    <h2>{{ .Title }}</h2>
+    <dl>
+        {{ .Links }}
+    </dl>
+</main>
+</body>
+</html>
